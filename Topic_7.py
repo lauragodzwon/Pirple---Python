@@ -44,19 +44,15 @@ if Existance == True:
             print("\nThe contents of the file: \n")
             print(TheWholeFile)
         File.close()
-    if Option == 4:
+    if Option == 4:                                     #Doesn't work, repair later
         with open(ChosenFile, "r+") as File:
             Line = int(input("The number of line you wish to replace: "))
-            for line in File:
-                OldText = File.readlines()
+            OldText = File.readlines()
             Text = input("The text that should be written into this line: \n")
-            for i, line in File:
+        #with open(ChosenFile, "w") as File:
+            for i, line in enumerate(OldText):
                 if i == Line - 1:
-                    new_line = line.replace(OldText, Text)
-                    print(new_line, end='')
-            TheWholeFile = File.read()
-            print("\nThe contents of the file: \n")
-            print(TheWholeFile)
+                    OldText[i].replace(OldText[i],Text)
         File.close()
 else:
     print("The file you are trying to open does not exist")
