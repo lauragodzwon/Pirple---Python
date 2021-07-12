@@ -23,6 +23,8 @@ The 6x7 board:
 1  3  5  7  9  11 13 15
 
 """
+##Still need to put it inside board
+
 
 def Board(rows,columns):
 
